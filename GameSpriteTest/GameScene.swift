@@ -67,12 +67,13 @@ class GameScene: SKScene {
         for touch in touches{
             let location = touch.location(in: self)
             print("x:\(location.x), y: \(location.y)")
+            criarParticula(CGPoint(x: location.x, y: location.y))
         }
         
     }
     
     func criarParticula(_ p:CGPoint) {
-        let particula:SKTexture = SKTexture(imageNamed: "xxx")
+        let particula:SKTexture = SKTexture(imageNamed: "Small_Rock")
         let minhaParticula:SKEmitterNode = SKEmitterNode()
         minhaParticula.particleTexture = particula
         minhaParticula.position = CGPoint(x: p.x, y: p.y)
